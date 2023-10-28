@@ -8,7 +8,7 @@ import csv
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-model_path = "models/10-80.25"
+model_path = "models/train_net"
 model = torch.load(model_path)
 model.to(device)
 model.eval()
