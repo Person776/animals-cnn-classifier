@@ -18,7 +18,7 @@ predicted_labels = []
 
 def classify(prediction):
 
-    label = prediction[0].cpu().detach().numpy().argmax()
+    label = prediction.cpu().detach().numpy().argmax()
     predicted_labels.append(label)
 
 
@@ -42,7 +42,7 @@ for image in images:
     predictions.append(model(image))
 
 for i in predictions:
-    classify(i)
+    classify(i[0])
 
 print(predicted_labels)
 
